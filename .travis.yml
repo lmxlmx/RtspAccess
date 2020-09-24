@@ -12,12 +12,13 @@ addons:
       - libswscale-dev 
       - libavutil-dev 
       - libsdl1.2-dev 
+      - libavdevice-dev
+      - libavfilter-dev
       - ffmpeg
 
 jobs:
   include:
   - arch: amd64
-  include:
   - arch: arm64
 
 script:
