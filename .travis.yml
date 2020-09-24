@@ -9,7 +9,7 @@ jobs:
   - arch: arm64
 
 script:
-  - apt install libavformat-dev libavcodec-dev libswresample-dev libswscale-dev libavutil-dev libsdl1.2-dev ffmpeg \
+  - sudo apt-get install libavformat-dev libavcodec-dev libswresample-dev libswscale-dev libavutil-dev libsdl1.2-dev ffmpeg \
     && mkdir build && cd build && cmake .. && make -j 8
 after_script:
   - ls
