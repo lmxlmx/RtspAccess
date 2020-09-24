@@ -2,6 +2,18 @@ sudo: required
 language: bash
 dist: xential
 
+addons:
+  apt:
+    packages:
+      - cmake
+      - libavformat-dev 
+      - libavcodec-dev 
+      - libswresample-dev 
+      - libswscale-dev 
+      - libavutil-dev 
+      - libsdl1.2-dev 
+      - ffmpeg
+
 jobs:
   include:
   - arch: amd64
@@ -9,7 +21,6 @@ jobs:
   - arch: arm64
 
 script:
-  - sudo apt-get install libavformat-dev libavcodec-dev libswresample-dev libswscale-dev libavutil-dev libsdl1.2-dev ffmpeg \
-    && mkdir build && cd build && cmake .. && make -j 8
+  - mkdir build && cd build && cmake .. && make -j 8
 after_script:
   - ls
